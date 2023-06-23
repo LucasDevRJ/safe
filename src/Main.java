@@ -33,9 +33,16 @@ public class Main {
 
         System.out.println("--------------------|Safe|--------------------");
         System.out.println("\t\t\t\tSuas informações");
-        System.out.printf("\nNome: %s", nome);
+        System.out.printf("Nome: %s", nome);
         System.out.printf("\nTipo de Conta: %s", tipoConta);
         System.out.printf("\nSaldo inicial: R$ %.2f", saldo);
         System.out.println("\n----------------------------------------------");
+
+        System.out.println("1 - Consultar saldo");
+        System.out.println("2 - Receber transferência");
+        System.out.println("3 - Transferir valor");
+        System.out.println("4 - Sair");
+        System.out.println("Digite a opção desejada: ");
+        opcao = entrada.nextByte();
     }
 }
