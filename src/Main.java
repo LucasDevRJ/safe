@@ -10,6 +10,12 @@ public class Main {
         System.out.print("Digite seu nome: ");
         nome = entrada.nextLine();
 
+        while (nome.isEmpty()) {
+            System.out.println("Digite o seu nome!!");
+            System.out.print("Digite seu nome: ");
+            nome = entrada.nextLine();
+        }
+
         System.out.print("1 - Conta Corrente ou 2 - Conta Poupança\nEscolha seu tipo de conta: ");
         byte opcao = entrada.nextByte();
 
