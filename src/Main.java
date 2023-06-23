@@ -42,7 +42,30 @@ public class Main {
         System.out.println("2 - Receber transferência");
         System.out.println("3 - Transferir valor");
         System.out.println("4 - Sair");
-        System.out.println("Digite a opção desejada: ");
+        System.out.print("Digite a opção desejada: ");
         opcao = entrada.nextByte();
+
+        switch (opcao) {
+                case 1:
+                    consultaSaldo(saldo);
+                    System.out.printf("\nSaldo: R$ %.2f", consultaSaldo(saldo));
+                break;
+
+                case 2:
+                    System.out.print("\nDigite o valor a receber: R$ ");
+                    float valorReceber = entrada.nextFloat();
+
+                    System.out.printf("Saldo Atual: R$ %.2f", recebeTransferencia(saldo, valorReceber));
+                break;
+        }
+    }
+
+    public static float consultaSaldo(float saldo) {
+        return saldo;
+    }
+
+    public static float recebeTransferencia(float saldo, float valorReceber) {
+        System.out.println("\nValor transferido com sucesso!");
+        return saldo += valorReceber;
     }
 }
