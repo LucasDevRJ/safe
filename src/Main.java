@@ -55,6 +55,13 @@ public class Main {
                     case 2:
                         System.out.print("\nDigite o valor a receber: R$ ");
                         float valorReceber = entrada.nextFloat();
+
+                        while (valorReceber <= 0.0) {
+                            System.out.println("Valor inválido!!");
+                            System.out.print("\nDigite o valor a receber: R$ ");
+                            valorReceber = entrada.nextFloat();
+                        }
+
                         saldo += valorReceber;
                         System.out.printf("Valor Recebido: R$ %.2f", valorReceber);
                     break;
@@ -62,6 +69,13 @@ public class Main {
                     case 3:
                         System.out.print("\nDigite o valor a ser transferido: R$ ");
                         float valorTransferir = entrada.nextFloat();
+
+                        while (valorTransferir <= 0.0 || valorTransferir > saldo) {
+                            System.out.println("Valor inválido ou saldo insuficiente");
+                            System.out.print("\nDigite o valor a ser transferido: R$ ");
+                            valorReceber = entrada.nextFloat();
+                        }
+
                         saldo -= valorTransferir;
                         System.out.printf("Valor Transferido: R$ %.2f", valorTransferir);
                     break;
