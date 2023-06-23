@@ -4,7 +4,7 @@ public class Main {
     public static void main(String[] args) {
         String nome;
         String tipoConta;
-        float saldo;
+        float saldo = 0.0f;
 
         Scanner entrada = new Scanner(System.in);
         System.out.print("Digite seu nome: ");
@@ -25,11 +25,17 @@ public class Main {
             opcao = entrada.nextByte();
         }
 
+        if (opcao == 1) {
+            tipoConta = "Conta Corrente";
+        } else {
+            tipoConta = "Conta Poupança";
+        }
+
         System.out.println("--------------------|Safe|--------------------");
         System.out.println("\t\t\t\tSuas informações");
-        System.out.println("Nome: ");
-        System.out.println("Tipo de Conta: ");
-        System.out.println("Saldo inicial: ");
-        System.out.println("----------------------------------------------");
+        System.out.printf("\nNome: %s", nome);
+        System.out.printf("\nTipo de Conta: %s", tipoConta);
+        System.out.printf("\nSaldo inicial: R$ %.2f", saldo);
+        System.out.println("\n----------------------------------------------");
     }
 }
