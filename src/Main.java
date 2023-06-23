@@ -73,7 +73,7 @@ public class Main {
                         while (valorTransferir <= 0.0 || valorTransferir > saldo) {
                             System.out.println("Valor inválido ou saldo insuficiente");
                             System.out.print("\nDigite o valor a ser transferido: R$ ");
-                            valorReceber = entrada.nextFloat();
+                            valorTransferir = entrada.nextFloat();
                         }
 
                         saldo -= valorTransferir;
