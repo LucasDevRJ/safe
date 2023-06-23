@@ -38,34 +38,41 @@ public class Main {
         System.out.printf("\nSaldo inicial: R$ %.2f", saldo);
         System.out.println("\n----------------------------------------------");
 
-        System.out.println("1 - Consultar saldo");
-        System.out.println("2 - Receber transferência");
-        System.out.println("3 - Transferir valor");
-        System.out.println("4 - Sair");
-        System.out.print("Digite a opção desejada: ");
-        opcao = entrada.nextByte();
+        do {
+            System.out.println("\n\n1 - Consultar saldo");
+            System.out.println("2 - Receber transferência");
+            System.out.println("3 - Transferir valor");
+            System.out.println("4 - Sair");
 
-        switch (opcao) {
-                case 1:
-                    consultaSaldo(saldo);
-                    System.out.printf("\nSaldo: R$ %.2f", consultaSaldo(saldo));
-                break;
+            System.out.print("\nDigite a opção desejada: ");
+            opcao = entrada.nextByte();
 
-                case 2:
-                    System.out.print("\nDigite o valor a receber: R$ ");
-                    float valorReceber = entrada.nextFloat();
+            switch (opcao) {
+                    case 1:
+                        System.out.printf("\nSaldo Atual: R$ %.2f", saldo);
+                    break;
 
-                    System.out.printf("Saldo Atual: R$ %.2f", recebeTransferencia(saldo, valorReceber));
-                break;
-        }
-    }
+                    case 2:
+                        System.out.print("\nDigite o valor a receber: R$ ");
+                        float valorReceber = entrada.nextFloat();
+                        saldo += valorReceber;
+                        System.out.printf("Valor Recebido: R$ %.2f", valorReceber);
+                    break;
 
-    public static float consultaSaldo(float saldo) {
-        return saldo;
-    }
+                    case 3:
+                        System.out.print("\nDigite o valor a ser transferido: R$ ");
+                        float valorTransferir = entrada.nextFloat();
+                        saldo -= valorTransferir;
+                        System.out.printf("Valor Transferido: R$ %.2f", valorTransferir);
+                    break;
 
-    public static float recebeTransferencia(float saldo, float valorReceber) {
-        System.out.println("\nValor transferido com sucesso!");
-        return saldo += valorReceber;
+                    case 4:
+                        System.out.println("\nPrograma finalizado.");
+                    break;
+
+                    default:
+                        System.out.print("Opção inválida!");
+            }
+        } while (opcao != 4);
     }
 }
