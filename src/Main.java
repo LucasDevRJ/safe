@@ -9,11 +9,6 @@ public class Main {
         float saldo = 0.0f;
 
         Scanner entrada = new Scanner(System.in);
-        LocalDateTime dataHoraAtual = LocalDateTime.now();
-        DateTimeFormatter dataFormato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        DateTimeFormatter horaFormato = DateTimeFormatter.ofPattern("HH:mm:ss");
-        String dataFormatada = dataHoraAtual.format(dataFormato);
-        String horaFormatada = dataHoraAtual.format(horaFormato);
 
         System.out.print("Digite seu nome: ");
         nome = entrada.nextLine();
@@ -63,8 +58,7 @@ public class Main {
 
             switch (opcao) {
                     case 1:
-                        System.out.printf("Data: %s\n", dataFormatada);
-                        System.out.printf("Horário: %s\n", horaFormatada);
+                        dataHorarioAtual();
                         System.out.printf("Saldo Atual: R$ %.2f\n", saldo);
                     break;
 
@@ -79,6 +73,7 @@ public class Main {
                         }
 
                         saldo += valorReceber;
+                        dataHorarioAtual();
                         System.out.printf("Valor Recebido: R$ %.2f\n", valorReceber);
                     break;
 
@@ -93,6 +88,7 @@ public class Main {
                         }
 
                         saldo -= valorTransferir;
+                        dataHorarioAtual();
                         System.out.printf("Valor Transferido: R$ %.2f\n", valorTransferir);
                     break;
 
@@ -104,5 +100,15 @@ public class Main {
                         System.out.println("Opção inválida!");
             }
         } while (opcao != 4);
+    }
+    public static void dataHorarioAtual() {
+        LocalDateTime dataHoraAtual = LocalDateTime.now();
+        DateTimeFormatter dataFormato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        DateTimeFormatter horaFormato = DateTimeFormatter.ofPattern("HH:mm:ss");
+        String dataFormatada = dataHoraAtual.format(dataFormato);
+        String horaFormatada = dataHoraAtual.format(horaFormato);
+
+        System.out.printf("Data: %s\n", dataFormatada);
+        System.out.printf("Horário: %s\n", horaFormatada);
     }
 }
