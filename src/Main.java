@@ -1,3 +1,5 @@
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class Main {
@@ -7,6 +9,12 @@ public class Main {
         float saldo = 0.0f;
 
         Scanner entrada = new Scanner(System.in);
+        LocalDateTime dataHoraAtual = LocalDateTime.now();
+        DateTimeFormatter dataFormato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        DateTimeFormatter horaFormato = DateTimeFormatter.ofPattern("HH:mm:ss");
+        String dataFormatada = dataHoraAtual.format(dataFormato);
+        String horaFormatada = dataHoraAtual.format(horaFormato);
+
         System.out.print("Digite seu nome: ");
         nome = entrada.nextLine();
 
@@ -55,6 +63,8 @@ public class Main {
 
             switch (opcao) {
                     case 1:
+                        System.out.printf("Data: %s\n", dataFormatada);
+                        System.out.printf("Horário: %s\n", horaFormatada);
                         System.out.printf("Saldo Atual: R$ %.2f\n", saldo);
                     break;
 
