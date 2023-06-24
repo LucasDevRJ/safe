@@ -1,5 +1,6 @@
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
@@ -75,6 +76,7 @@ public class Main {
                         saldo += valorReceber;
                         dataHorarioAtual();
                         System.out.printf("Valor Recebido: R$ %.2f\n", valorReceber);
+                        gerarCriptografia();
                     break;
 
                     case 3:
@@ -90,6 +92,7 @@ public class Main {
                         saldo -= valorTransferir;
                         dataHorarioAtual();
                         System.out.printf("Valor Transferido: R$ %.2f\n", valorTransferir);
+                        gerarCriptografia();
                     break;
 
                     case 4:
@@ -110,5 +113,31 @@ public class Main {
 
         System.out.printf("Data: %s\n", dataFormatada);
         System.out.printf("Horário: %s\n", horaFormatada);
+    }
+
+    public static void gerarCriptografia() {
+        //caracteres que podem ser gerados
+        String caracteres = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+
+        //tamanho da criptografia
+        int tamanho = 25;
+
+        //gera caracteres aleatorios
+        Random randomico = new Random();
+
+        //string acumuladora de caracter
+        StringBuilder armazenaCaracteres = new StringBuilder();
+
+        for (int i = 0; i < tamanho; i++) {
+            //obter o índice aleatorio
+            int indice = randomico.nextInt(caracteres.length());
+            //retorna algum caracter aleatorio
+            char caractere = caracteres.charAt(indice);
+            armazenaCaracteres.append(caractere);
+        }
+
+        String criptografia = armazenaCaracteres.toString();
+
+        System.out.printf("Criptografia: %s", criptografia);
     }
 }
