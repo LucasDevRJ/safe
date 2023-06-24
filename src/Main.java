@@ -32,7 +32,7 @@ public class Main {
         }
 
         String informacoes = """
-                --------------------|Safe|--------------------
+                \n--------------------|Safe|--------------------
                 Suas informações
                 Nome: %s
                 Tipo de Conta: %s
@@ -55,7 +55,7 @@ public class Main {
 
             switch (opcao) {
                     case 1:
-                        System.out.printf("Saldo Atual: R$ %.2f", saldo);
+                        System.out.printf("Saldo Atual: R$ %.2f\n", saldo);
                     break;
 
                     case 2:
@@ -69,7 +69,7 @@ public class Main {
                         }
 
                         saldo += valorReceber;
-                        System.out.printf("Valor Recebido: R$ %.2f", valorReceber);
+                        System.out.printf("Valor Recebido: R$ %.2f\n", valorReceber);
                     break;
 
                     case 3:
@@ -83,7 +83,7 @@ public class Main {
                         }
 
                         saldo -= valorTransferir;
-                        System.out.printf("Valor Transferido: R$ %.2f", valorTransferir);
+                        System.out.printf("Valor Transferido: R$ %.2f\n", valorTransferir);
                     break;
 
                     case 4:
