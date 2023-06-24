@@ -31,34 +31,40 @@ public class Main {
             tipoConta = "Conta Poupança";
         }
 
-        System.out.println("--------------------|Safe|--------------------");
-        System.out.println("\t\t\t\tSuas informações");
-        System.out.printf("Nome: %s", nome);
-        System.out.printf("\nTipo de Conta: %s", tipoConta);
-        System.out.printf("\nSaldo inicial: R$ %.2f", saldo);
-        System.out.println("\n----------------------------------------------");
+        String informacoes = """
+                --------------------|Safe|--------------------
+                Suas informações
+                Nome: %s
+                Tipo de Conta: %s
+                Saldo inicial: R$ %.2f
+                ----------------------------------------------
+                """.formatted(nome, tipoConta, saldo);
+        System.out.println(informacoes);
 
         do {
-            System.out.println("\n\n1 - Consultar saldo");
-            System.out.println("2 - Receber transferência");
-            System.out.println("3 - Transferir valor");
-            System.out.println("4 - Sair");
+            String menu = """
+                    \n1 - Consultar saldo
+                    2 - Receber transferência
+                    3 - Transferir valor
+                    4 - Sair
+                    """;
+            System.out.println(menu);
 
             System.out.print("\nDigite a opção desejada: ");
             opcao = entrada.nextByte();
 
             switch (opcao) {
                     case 1:
-                        System.out.printf("\nSaldo Atual: R$ %.2f", saldo);
+                        System.out.printf("Saldo Atual: R$ %.2f", saldo);
                     break;
 
                     case 2:
-                        System.out.print("\nDigite o valor a receber: R$ ");
+                        System.out.print("Digite o valor a receber: R$ ");
                         float valorReceber = entrada.nextFloat();
 
                         while (valorReceber <= 0.0) {
                             System.out.println("Valor inválido!!");
-                            System.out.print("\nDigite o valor a receber: R$ ");
+                            System.out.print("Digite o valor a receber: R$ ");
                             valorReceber = entrada.nextFloat();
                         }
 
@@ -67,7 +73,7 @@ public class Main {
                     break;
 
                     case 3:
-                        System.out.print("\nDigite o valor a ser transferido: R$ ");
+                        System.out.print("Digite o valor a ser transferido: R$ ");
                         float valorTransferir = entrada.nextFloat();
 
                         while (valorTransferir <= 0.0 || valorTransferir > saldo) {
@@ -81,11 +87,11 @@ public class Main {
                     break;
 
                     case 4:
-                        System.out.println("\nPrograma finalizado.");
+                        System.out.println("Programa finalizado.");
                     break;
 
                     default:
-                        System.out.print("Opção inválida!");
+                        System.out.println("Opção inválida!");
             }
         } while (opcao != 4);
     }
