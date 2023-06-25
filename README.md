@@ -52,7 +52,7 @@ Aprender e reforçar os conteúdos sobre Java. Utilizando conceitos como Lógica
 - Tipos de métodos
 - Etc
 
-## :person_with_black_hair: Autores
+## :raising_hand: Autores
 
 | [<img src="https://avatars.githubusercontent.com/u/95040236?v=4" width=115><br><sub>Lucas Pereira de Lima</sub>](https://github.com/LucasDevRJ)
 | :---: |
