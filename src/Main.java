@@ -138,6 +138,6 @@ public class Main {
 
         String criptografia = armazenaCaracteres.toString();
 
-        System.out.printf("Criptografia: %s", criptografia);
+        System.out.printf("Criptografia: %s\n", criptografia);
     }
 }
