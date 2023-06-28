@@ -80,19 +80,24 @@ public class Main {
                     break;
 
                     case 3:
-                        System.out.print("Digite o valor a ser transferido: R$ ");
-                        float valorTransferir = entrada.nextFloat();
 
-                        while (valorTransferir <= 0.0 || valorTransferir > saldo) {
-                            System.out.println("Valor inválido ou saldo insuficiente");
-                            System.out.print("\nDigite o valor a ser transferido: R$ ");
-                            valorTransferir = entrada.nextFloat();
+                        if (saldo > 0.0) {
+                            System.out.print("Digite o valor a ser transferido: R$ ");
+                            float valorTransferir = entrada.nextFloat();
+
+                            while (valorTransferir <= 0.0 || valorTransferir > saldo) {
+                                System.out.println("Valor inválido ou saldo insuficiente");
+                                System.out.print("\nDigite o valor a ser transferido: R$ ");
+                                valorTransferir = entrada.nextFloat();
+                            }
+
+                            saldo -= valorTransferir;
+                            dataHorarioAtual();
+                            System.out.printf("Valor Transferido: R$ %.2f\n", valorTransferir);
+                            gerarCriptografia();
+                        } else {
+                            System.out.println("Saldo insuficiente!!");
                         }
-
-                        saldo -= valorTransferir;
-                        dataHorarioAtual();
-                        System.out.printf("Valor Transferido: R$ %.2f\n", valorTransferir);
-                        gerarCriptografia();
                     break;
 
                     case 4:
