@@ -13,6 +13,8 @@
 
 O projeto Safe se trata de um sistema bancário, onde o usuário cadastra a sua conta com as suas informações e após isso poderá consultar o saldo, transferir valor, receber valor e sair do programa.
 
+![Descrição do projeto](https://github.com/LucasDevRJ/safe/assets/95040236/c2eea3a7-cf6c-4fc3-9af6-b708d985ec3e)
+
 ## :moneybag: Objetivo
 
 Aprender e reforçar os conteúdos sobre Java. Utilizando conceitos como Lógica de Programação, Polimorfismo, Herança, Abstração e etc. Enfim, tudo que é preciso para criar um projeto profissional com Java.
@@ -25,6 +27,8 @@ Aprender e reforçar os conteúdos sobre Java. Utilizando conceitos como Lógica
 - `Funcionalidade 4`: Realizar transferência
 - `Funcionalidade 5`: Transferir valor
 - `Funcionalidade 6`: Sair
+
+[Vídeo do projeto](https://github.com/LucasDevRJ/safe/assets/95040236/02776583-9438-40a9-b643-b11611abf624)
 
 ## :moneybag: Acesso ao projeto
 
