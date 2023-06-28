@@ -21,15 +21,15 @@ public class Main {
         }
 
         System.out.print("1 - Conta Corrente ou 2 - Conta Poupança\nEscolha seu tipo de conta: ");
-        byte opcao = entrada.nextByte();
+        String opcao = entrada.next();
 
-        while (opcao != 1 && opcao != 2) {
+        while (!opcao.equals("1") && !opcao.equals("2")) {
             System.out.println("Digite somente 1 ou 2!!");
             System.out.print("1 - Conta Corrente ou 2 - Conta Poupança\nEscolha seu tipo de conta: ");
-            opcao = entrada.nextByte();
+            opcao = entrada.next();
         }
 
-        if (opcao == 1) {
+        if (opcao.equals("1")) {
             tipoConta = "Conta Corrente";
         } else {
             tipoConta = "Conta Poupança";
@@ -55,15 +55,15 @@ public class Main {
             System.out.println(menu);
 
             System.out.print("\nDigite a opção desejada: ");
-            opcao = entrada.nextByte();
+            opcao = entrada.next();
 
             switch (opcao) {
-                    case 1:
+                    case "1":
                         dataHorarioAtual();
                         System.out.printf("Saldo Atual: R$ %.2f\n", saldo);
                     break;
 
-                    case 2:
+                    case "2":
                         System.out.print("Digite o valor a receber: R$ ");
                         float valorReceber = entrada.nextFloat();
 
@@ -79,7 +79,7 @@ public class Main {
                         gerarCriptografia();
                     break;
 
-                    case 3:
+                    case "3":
 
                         if (saldo > 0.0) {
                             System.out.print("Digite o valor a ser transferido: R$ ");
@@ -100,14 +100,14 @@ public class Main {
                         }
                     break;
 
-                    case 4:
+                    case "4":
                         System.out.println("Programa finalizado.");
                     break;
 
                     default:
                         System.out.println("Opção inválida!");
             }
-        } while (opcao != 4);
+        } while (!opcao.equals("4"));
     }
     public static void dataHorarioAtual() {
         LocalDateTime dataHoraAtual = LocalDateTime.now();
@@ -116,7 +116,7 @@ public class Main {
         String dataFormatada = dataHoraAtual.format(dataFormato);
         String horaFormatada = dataHoraAtual.format(horaFormato);
 
-        System.out.printf("Data: %s\n", dataFormatada);
+        System.out.printf("\nData: %s\n", dataFormatada);
         System.out.printf("Horário: %s\n", horaFormatada);
     }
 
